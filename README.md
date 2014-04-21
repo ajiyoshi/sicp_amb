@@ -1,4 +1,4 @@
-``
+```
 $ rlwrap gosh -I .
 (load "amb")
 #t
@@ -25,4 +25,4 @@ try-again
 
 ;;; Amb-Eval input:
 
-``
+```
