@@ -1,4 +1,3 @@
-
 (define (require p)
   (if (not p) (amb)))
 
@@ -15,4 +14,23 @@
     (require (even? (+ a b)))
     (list a b)))
 
-(even-sum-pair '(1 2 3) '(4 5 6))
+(define (an-integer-between a b)
+  (require (< a b))
+  (amb a (an-integer-between (+ a 1) b)))
+
+(define (a-pythagorean-triple-between low high)
+  (let ((i (an-integer-between low high)))
+    (let ((j (an-integer-between i high)))
+      (let ((k (an-integer-between j high)))
+        (require (= (+ (* i i) (* j j)) (* k k)))
+        (list i j k)))))
+
+(define (a-pythagorean-triple-for n)
+  (let ((i (an-integer-between 1 n)))
+    (let ((j (an-integer-between i n)))
+      (require (= (+ (* i i) (* j j)) (* n n)))
+      (list i j n))))
+
+(define (a-pythagorean-triple)
+  (a-pythagorean-triple-for (an-integer-starting-from 1)))
+
