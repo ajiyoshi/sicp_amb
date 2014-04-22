@@ -1,8 +1,6 @@
 ```
-$ rlwrap gosh -I .
-(load "amb")
-#t
-gosh> (driver-loop)
+$ rlwrap gosh -I . run.scm
+okokokokokokokok
 
 ;;; Amb-Eval input:
 (amb 1 2)
